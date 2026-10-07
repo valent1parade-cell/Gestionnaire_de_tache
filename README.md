@@ -1,4 +1,4 @@
-# Gestionnaire de Tâches — TP React + Vite
+# Gestionnaire de Tâches 
 
 Projet réalisé dans le cadre du TP React de gestion de tâches.
 
