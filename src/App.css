@@ -1,0 +1,238 @@
+/* --- REGLES GLOBALES & FONT --- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background-color: #eef2f6;
+  color: #1e293b;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* --- CARTE PRINCIPALE --- */
+.app-container {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px 28px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05),
+              0 8px 10px -6px rgba(0, 0, 0, 0.01);
+  border: 1px solid #e2e8f0;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: #0f172a;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* --- FORMULAIRE D'AJOUT --- */
+.task-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.task-form input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #1e293b;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.task-form input:focus {
+  border-color: #0284c7;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+.task-form button {
+  padding: 12px 20px;
+  background-color: #0284c7;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.task-form button:hover {
+  background-color: #0369a1;
+}
+
+/* --- LISTE DES TACHES --- */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 8px;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.15s ease;
+  border-radius: 6px;
+}
+
+.task-item:hover {
+  background-color: #f8fafc;
+}
+
+/* Checkbox personnalisée */
+.task-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.task-item input[type="checkbox"]:checked {
+  background-color: #0284c7;
+  border-color: #0284c7;
+}
+
+.task-item input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Texte de la tâche */
+.task-text {
+  flex: 1;
+  font-size: 15px;
+  color: #334155;
+  transition: color 0.2s ease;
+}
+
+/* Tâche terminée */
+.task-item.terminee .task-text {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+/* Bouton Supprimer (✕) */
+.btn-delete {
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  opacity: 0.6;
+  transition: all 0.2s ease;
+}
+
+.task-item:hover .btn-delete {
+  opacity: 1;
+}
+
+.btn-delete:hover {
+  background-color: #fef2f2;
+}
+
+/* --- ACTIONS MASSIVES (Tout marquer / Supprimer) --- */
+.actions-massives {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.actions-massives button {
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actions-massives button:hover {
+  background-color: #e2e8f0;
+  color: #1e293b;
+}
+
+/* --- FOOTER & FILTRES --- */
+.footer-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.compteur {
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.filtres {
+  display: flex;
+  gap: 6px;
+}
+
+.filtres button {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  color: #0284c7;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filtres button:hover {
+  background-color: #f0f9ff;
+}
+
+/* Filtre actif */
+.filtres button.actif {
+  background-color: #0284c7;
+  color: #ffffff;
+  border-color: #0284c7;
+}
+
+/* Message si aucune tâche */
+.empty-message {
+  text-align: center;
+  color: #94a3b8;
+  font-style: italic;
+  padding: 24px 0;
+  font-size: 15px;
+}
