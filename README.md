@@ -3,8 +3,8 @@
 Projet réalisé dans le cadre du TP React de gestion de tâches.
 
 ## 👥 Binôme
-- **Alexandre**
-- **Thomas**
+- **Maxime Noel**
+- **Valentin Parade**
 
 ## 🚀 Fonctionnalités
 - **Ajout de tâches** avec validation (refus des entrées vides ou remplies d'espaces).
